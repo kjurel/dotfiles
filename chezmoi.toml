@@ -1,0 +1,4 @@
+[git]
+commitMessageTemplate = "{{ promptString \"Commit message\" }}"
+autoCommit = true
+autoPush = true
