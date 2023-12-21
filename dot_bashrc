@@ -30,4 +30,5 @@ if [ -d $HOME/.shellrc/bashrc.d ]; then
 	done
 fi
 
+#init sheldon scripts
 eval "$(sheldon source)"
