@@ -13,22 +13,28 @@ export PATH
 
 if [[ $- != *i* ]]; then
 	# shell is non-interactive. be done now!
+	echo "not interactive"
 	return
 fi
 
-# Load all files from .shell/rc.d directory
-if [ -d $HOME/.shellrc/rc.d ]; then
-	for file in $HOME/.shellrc/rc.d/*.sh; do
+rc_src=~/shrc/rc.d/
+
+if [ -d $HOME/.shrc/rc.d ]; then
+	for file in $HOME/.shrc/rc.d/*.sh; do
 		source $file
 	done
 fi
 
-# Load all files from .shell/bashrc.d directory
-if [ -d $HOME/.shellrc/bashrc.d ]; then
-	for file in $HOME/.shellrc/bashrc.d/*.bash; do
+if [ -d $HOME/.shrc/bashrc.d ]; then
+	for file in $HOME/.shrc/bashrc.d/*.bash; do
 		source $file
 	done
 fi
 
-#init sheldon scripts
 eval "$(sheldon source)"
+
+blesh_src=$HOME/.local/share/blesh/ble.sh
+
+if [ -f "$blesh_src" ]; then
+	source "$blesh_src"
+fi

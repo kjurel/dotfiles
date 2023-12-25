@@ -1,0 +1,11 @@
+[".local/share/blesh"]
+url = "https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly.tar.xz"
+refreshPeriod = "168h"
+type = "archive"
+exact = true
+stripComponents = 1
+
+[".local/bin/uad"]
+url = "https://github.com/0x192/universal-android-debloater/releases/download/0.5.1/uad_gui-linux.tar.gz"
+type = "archive-file"
+path = "uad_gui-linux"
