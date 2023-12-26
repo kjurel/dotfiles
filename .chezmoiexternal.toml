@@ -9,3 +9,8 @@ stripComponents = 1
 url = "https://github.com/0x192/universal-android-debloater/releases/download/0.5.1/uad_gui-linux.tar.gz"
 type = "archive-file"
 path = "uad_gui-linux"
+
+[".local/bin/rtx"]
+url = 'https://github.com/jdx/rtx/releases/latest/download/rtx-{{ (gitHubLatestRelease "jdx/rtx").TagName }}-{{ .chezmoi.os }}-{{ if eq .chezmoi.arch "amd64" }}x64{{ else }}{{ .chezmoi.arch }}{{ end }}'
+refreshPeriod = "168h"
+type = "file"
