@@ -1,4 +1,11 @@
 [tools]
+lazygit = "latest"
+starship = "latest"
+gitui = "latest"
+neovim = "stable"
+python = "latest"
+poetry = "latest"
 node = "lts"
-python = "3"
-java = "lts"
+pnpm = "latest"
+bun = "latest"
+
