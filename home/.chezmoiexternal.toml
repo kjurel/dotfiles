@@ -1,0 +1,28 @@
+[".local/share/blesh"]
+url = "https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly.tar.xz"
+refreshPeriod = "168h"
+type = "archive"
+exact = true
+stripComponents = 1
+
+[".local/bin/uad"]
+url = 'https://github.com/0x192/universal-android-debloater/releases/download/{{ (gitHubLatestTag "0x192/universal-android-debloater").Name }}/uad_gui-linux.tar.gz'
+refreshPeriod = "168h"
+type = "archive-file"
+path = "uad_gui-linux"
+
+[".local/bin/rtx"]
+url = 'https://github.com/jdx/rtx/releases/latest/download/rtx-{{ (gitHubLatestRelease "jdx/rtx").TagName }}-{{ .chezmoi.os }}-{{ if eq .chezmoi.arch "amd64" }}x64{{ else }}{{ .chezmoi.arch }}{{ end }}.tar.gz'
+refreshPeriod = "168h"
+type = "archive-file"
+path = "rtx/bin/rtx"
+
+[".shrc/.bashrc.d/plugins/wezterm.sh"]
+url = "https://raw.githubusercontent.com/wez/wezterm/main/assets/shell-integration/wezterm.sh"
+refreshPeriod = "168h"
+type = "file"
+
+[".mozilla/firefox/tokcide/chrome/firefox-gnome-theme"]
+url = "https://github.com/rafaelmardojai/firefox-gnome-theme"
+refreshPeriod = "168h"
+type = "git-repo"
