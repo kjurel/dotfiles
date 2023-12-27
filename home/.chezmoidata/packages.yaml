@@ -1,0 +1,22 @@
+packages:
+  rpm-ostree:
+    - mozilla-openh264
+  toolbox:
+    - dnf-command(config-manager)
+    - [adb, ranger, rclone]
+    - [
+        g++,
+        cmake,
+        openssl,
+        openssl-devel,
+        freetype-devel,
+        fontconfig-devel,
+        libxcb-devel,
+        libxkbcommon-devel,
+      ]
+  flatpak:
+    - org.wezfurlong.wezterm
+
+package-groups:
+  toolbox:
+    - "Development Tools"
