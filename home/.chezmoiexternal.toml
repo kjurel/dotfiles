@@ -17,12 +17,17 @@ refreshPeriod = "168h"
 type = "archive-file"
 path = "rtx/bin/rtx"
 
-[".shrc/.bashrc.d/plugins/wezterm.sh"]
+[".config/bashrc.d/plugins/wezterm.sh"]
 url = "https://raw.githubusercontent.com/wez/wezterm/main/assets/shell-integration/wezterm.sh"
 refreshPeriod = "168h"
 type = "file"
 
 [".mozilla/firefox/tokcide/chrome/firefox-gnome-theme"]
 url = "https://github.com/rafaelmardojai/firefox-gnome-theme"
+refreshPeriod = "168h"
+type = "git-repo"
+
+[".local/share/nautilus/scripts"]
+url = "https://github.com/cfgnunes/nautilus-scripts"
 refreshPeriod = "168h"
 type = "git-repo"
