@@ -1,0 +1,16 @@
+[".local/share/blesh"]
+url = "https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly.tar.xz"
+refreshPeriod = "168h"
+type = "archive"
+exact = true
+stripComponents = 1
+
+[".local/share/nautilus/scripts"]
+url = "https://github.com/cfgnunes/nautilus-scripts"
+refreshPeriod = "168h"
+type = "git-repo"
+
+[".config/bashrc.d/plugins/wezterm.sh"]
+url = "https://raw.githubusercontent.com/wez/wezterm/main/assets/shell-integration/wezterm.sh"
+refreshPeriod = "168h"
+type = "file"

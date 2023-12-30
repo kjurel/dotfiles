@@ -1,0 +1,15 @@
+{{ if eq .chezmoi.os "linux" -}}
+#! /bin/bash
+
+install-flatpak() {
+	{{ range .packages.flatpak -}}
+	if ! flatpak list --app | grep -q {{ . | quote }}; then
+		echo "Installing "
+		flatpak install -y {{ . | quote }}
+	else
+		echo {{ . | quote }}" is already installed"}
+	fi
+	{{ end -}}
+
+}
+{{ end -}}

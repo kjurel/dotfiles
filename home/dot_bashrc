@@ -11,20 +11,22 @@ if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
 fi
 export PATH
 
-
 if [[ $- != *i* ]]; then
 	# shell is non-interactive. be done now!
 	return
 fi
+
+[[ $- == *i* ]] && source $HOME/.local/share/blesh/ble.sh --noattach || echo "Error: Unable to source ble.sh"
 
 if [ -d $HOME/.config/bashrc.d ]; then
 	for file in $HOME/.config/bashrc.d/*.bash; do
 		source $file
 	done
 fi
-
-blesh_src=$HOME/.local/share/blesh/ble.sh
-
-if [ -f "$blesh_src" ]; then
-	source "$blesh_src"
+if [ -d $HOME/.config/bashrc.d/plugins ]; then
+	for file in $HOME/.config/bashrc.d/plugins/*.sh; do
+		source $file
+	done
 fi
+
+[[ ${BLE_VERSION-} ]] && ble-attach
