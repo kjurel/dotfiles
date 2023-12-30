@@ -1,4 +1,5 @@
 [tools]
+fzf = "latest"
 lazygit = "latest"
 starship = "latest"
 gitui = "latest"
@@ -8,4 +9,3 @@ poetry = "latest"
 node = "lts"
 pnpm = "latest"
 bun = "latest"
-

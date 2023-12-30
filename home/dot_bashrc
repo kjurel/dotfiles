@@ -1,4 +1,4 @@
-# .bashrc
+#! /bin/bash
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -11,10 +11,7 @@ if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
 fi
 export PATH
 
-if [[ $- != *i* ]]; then
-	# shell is non-interactive. be done now!
-	return
-fi
+[[ $- != *i* ]] && return || echo "shell is interactive"
 
 [[ $- == *i* ]] && source $HOME/.local/share/blesh/ble.sh --noattach || echo "Error: Unable to source ble.sh"
 
