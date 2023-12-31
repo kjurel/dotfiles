@@ -10,6 +10,11 @@ url = "https://github.com/cfgnunes/nautilus-scripts"
 refreshPeriod = "168h"
 type = "git-repo"
 
+[".config/blesh/blerc.template"]
+url = "https://raw.githubusercontent.com/akinomyoga/ble.sh/master/blerc.template"
+refreshPeriod = "168h"
+type = "file"
+
 [".config/bashrc.d/plugins/wezterm.sh"]
 url = "https://raw.githubusercontent.com/wez/wezterm/main/assets/shell-integration/wezterm.sh"
 refreshPeriod = "168h"
