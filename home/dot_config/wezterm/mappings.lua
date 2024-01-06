@@ -15,41 +15,26 @@ return {
 	-- { key = "k", mods = "CTRL", action = act({ ActivatePaneDirection = "Up" }) },
 	-- { key = "j", mods = "CTRL", action = act({ ActivatePaneDirection = "Down" }) },
 	-- Pane Cycles
-	{ key = "[", mods = "CTRL", action = act({ ActivatePaneDirection = "Next" }) },
-	{ key = "]", mods = "CTRL", action = act({ ActivatePaneDirection = "Prev" }) },
+	-- { key = "[", mods = "CTRL", action = act({ ActivatePaneDirection = "Next" }) },
+	-- { key = "]", mods = "CTRL", action = act({ ActivatePaneDirection = "Prev" }) },
 	-- Pane Resize
-	{ key = "H", mods = "CTRL|SHIFT", action = act({ AdjustPaneSize = { "Left", 2 } }) },
-	{ key = "J", mods = "CTRL|SHIFT", action = act({ AdjustPaneSize = { "Down", 2 } }) },
-	{ key = "K", mods = "CTRL|SHIFT", action = act({ AdjustPaneSize = { "Up", 2 } }) },
-	{ key = "L", mods = "CTRL|SHIFT", action = act({ AdjustPaneSize = { "Right", 2 } }) },
+	-- { key = "H", mods = "CTRL|SHIFT", action = act({ AdjustPaneSize = { "Left", 2 } }) },
+	-- { key = "J", mods = "CTRL|SHIFT", action = act({ AdjustPaneSize = { "Down", 2 } }) },
+	-- { key = "K", mods = "CTRL|SHIFT", action = act({ AdjustPaneSize = { "Up", 2 } }) },
+	-- { key = "L", mods = "CTRL|SHIFT", action = act({ AdjustPaneSize = { "Right", 2 } }) },
 	-- TAB section
 	{ key = ",", mods = "CTRL", action = act({ ActivateTabRelativeNoWrap = 1 }) },
 	{ key = "m", mods = "CTRL", action = act({ ActivateTabRelativeNoWrap = -1 }) },
 	-- search for the string "hash" matching regardless of case
-	{ key = "F", mods = "CTRL|SHIFT", action = act({ Search = { CaseInSensitiveString = "hash" } }) },
-	{ key = "T", mods = "CTRL|SHIFT", action = "ShowTabNavigator" },
-	-- { key = "L", mods = "CTRL|SHIFT", action = "ShowLauncher" },
-	{ key = "f", mods = "CTRL", action = "ToggleFullScreen" },
-	{ key = "N", mods = "CTRL|SHIFT", action = "SpawnWindow" },
-	{ key = " ", mods = "CTRL|SHIFT", action = "QuickSelect" },
-	-- personal
-	{ key = "q", mods = "ALT", action = act.ShowTabNavigator },
-	{ key = "n", mods = "SHIFT|CTRL", action = act.ToggleFullScreen },
-	{ key = "9", mods = "CTRL", action = act.ShowLauncherArgs({ flags = "LAUNCH_MENU_ITEMS" }) },
-	{ key = "7", mods = "ALT", action = act.ShowLauncher },
+	-- { key = "F", mods = "CTRL|SHIFT", action = act({ Search = { CaseInSensitiveString = "hash" } }) },
+	{ key = "T", mods = "CTRL|SHIFT", action = act.ShowTabNavigator },
+	{ key = "L", mods = "CTRL|SHIFT", action = act.ShowLauncherArgs({ flags = "LAUNCH_MENU_ITEMS" }) },
+	{ key = "f", mods = "CTRL", action = act.ToggleFullScreen },
+	{ key = "N", mods = "CTRL|SHIFT", action = act.SpawnWindow },
+	{ key = " ", mods = "CTRL|SHIFT", action = act.QuickSelect },
 	{
-		key = ",",
-		mods = "CTRL",
-		action = act.SpawnCommandInNewTab({
-			label = "config",
-			cwd = os.getenv("WEZTERM_CONFIG_DIR"),
-			set_environment_variables = { TERM = "screen-256color" },
-			args = { "nvim", os.getenv("WEZTERM_CONFIG_FILE") },
-		}),
-	},
-	{
-		key = "r",
-		mods = "SHIFT|CTRL",
+		key = "R",
+		mods = "CTRL|SHIFT",
 		action = act.PromptInputLine({
 			description = "Enter new name for tab",
 			action = wezterm.action_callback(function(window, _, line)
