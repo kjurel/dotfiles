@@ -7,7 +7,7 @@ install-flatpak() {
 		echo "Installing "
 		flatpak install -y {{ . | quote }}
 	else
-		echo {{ . | quote }}" is already installed"}
+		echo {{ . | quote }}" is already installed"
 	fi
 	{{ end -}}
 }
