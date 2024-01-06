@@ -69,8 +69,7 @@ local function get_process(tab)
 		process_name = "nvim"
 	end
 
-	return process_name
-	-- return process_icons[process_name] or string.format("[%s]", process_name)
+	return process_icons[process_name] or string.format("[%s]", process_name)
 end
 
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
