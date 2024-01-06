@@ -8,7 +8,6 @@ return {
 	{ key = "'", mods = "CTRL", action = act({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
 	{ key = "z", mods = "CTRL", action = "TogglePaneZoomState" },
 	{ key = "x", mods = "CTRL", action = act({ CloseCurrentPane = { confirm = true } }) },
-	-- Pane Sections
 	-- Pane Navigates
 	-- { key = "h", mods = "CTRL", action = act({ ActivatePaneDirection = "Left" }) },
 	-- { key = "l", mods = "CTRL", action = act({ ActivatePaneDirection = "Right" }) },
