@@ -1,4 +1,4 @@
-[".mozilla/firefox/tokcide/chrome/firefox-gnome-theme"]
+['{{ first (glob ".mozilla/firefox/*.default*") }}/chrome/firefox-gnome-theme']
 url = "https://github.com/rafaelmardojai/firefox-gnome-theme"
 refreshPeriod = "168h"
 type = "git-repo"
