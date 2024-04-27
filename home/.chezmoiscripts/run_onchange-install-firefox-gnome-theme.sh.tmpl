@@ -1,0 +1,7 @@
+#! /bin/bash
+
+
+# ffx-gnome hash: {{ (gitHubLatestRelease "rafaelmardojai/firefox-gnome-theme").TagName | sha256sum }}
+
+# https://github.com/rafaelmardojai/firefox-gnome-theme/blob/master/scripts/auto-install.sh
+curl -s -o- https://raw.githubusercontent.com/rafaelmardojai/firefox-gnome-theme/master/scripts/install-by-curl.sh | bash
