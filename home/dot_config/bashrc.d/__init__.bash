@@ -2,6 +2,7 @@
 
 eval "$(mise activate)"
 eval "$(mise completion bash)"
+eval "$(starship init bash)"
 
 update-user() {
 	rpm-ostree upgrade
