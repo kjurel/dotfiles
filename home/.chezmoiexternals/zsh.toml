@@ -4,6 +4,6 @@ refreshPeriod = "168h"
 type = "git-repo"
 
 [".config/zshrc.d/plugins/catppuccin.sh"]
-url = "https://raw.githubusercontent.com/catppuccin/zsh-syntax-highlighting/blob/main/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh"
+url = "https://raw.githubusercontent.com/catppuccin/zsh-syntax-highlighting/main/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh"
 refreshPeriod = "168h"
 type = "file"
