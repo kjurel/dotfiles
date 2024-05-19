@@ -7,5 +7,5 @@ exclude = [
   "OFL.txt",
   "JetBrainsMonoNerdFontMono-**.ttf",
   "JetBrainsMonoNerdFontPropo-**.ttf",
-  "JetBrainMonoNL**.ttf",
+  "JetBrainsMonoNL**.ttf",
 ]
