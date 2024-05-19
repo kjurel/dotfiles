@@ -1,0 +1,11 @@
+[".local/share/fonts/JetBrainMono"]
+url = 'https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz'
+refreshPeriod = "168h"
+type = "archive"
+exclude = [
+  "README.md",
+  "OFL.txt",
+  "JetBrainsMonoNerdFontMono-**.ttf",
+  "JetBrainsMonoNerdFontPropo-**.ttf",
+  "JetBrainMonoNL**.ttf",
+]
