@@ -4,6 +4,11 @@ refreshPeriod = "168h"
 type = "archive-file"
 path = "mise/bin/mise"
 
+[".local/bin/wezterm"]
+url = 'https://github.com/wez/wezterm/releases/latest/download/wezterm-{{ (gitHubLatestTag "wez/wezterm").Name }}-1.fedora39.{{ if eq .chezmoi.arch "amd64" }}x86_64{{ else }}{{ .chezmoi.arch }}{{ end }}.rpm'
+refreshPeriod = "168h"
+type = "file"
+
 [".local/bin/uad"]
 url = 'https://github.com/0x192/universal-android-debloater/releases/download/{{ (gitHubLatestTag "0x192/universal-android-debloater").Name }}/uad_gui-{{ .chezmoi.os }}.tar.gz'
 refreshPeriod = "168h"
