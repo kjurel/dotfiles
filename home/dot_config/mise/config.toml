@@ -1,5 +1,6 @@
 [tools]
 fzf = "latest"
+tmux = "latest"
 lazygit = "latest"
 starship = "latest"
 pre-commit = "latest"
