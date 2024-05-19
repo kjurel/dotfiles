@@ -2,12 +2,12 @@
 fzf = "latest"
 lazygit = "latest"
 starship = "latest"
+pre-commit = "latest"
 neovim = "stable"
 python = "latest"
 poetry = "latest"
 node = "lts"
 pnpm = "latest"
-bun = "latest"
 
 [settings]
 experimental = true
