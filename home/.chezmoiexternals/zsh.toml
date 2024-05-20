@@ -8,18 +8,12 @@ url = "https://github.com/zsh-users/zsh-autosuggestions"
 refreshPeriod = "168h"
 type = "git-repo"
 
-[".config/zshrc.d/plugins/catppuccin.sh"]
-url = "https://raw.githubusercontent.com/catppuccin/zsh-syntax-highlighting/main/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh"
-refreshPeriod = "168h"
-type = "file"
-
-[".config/zshrc.d/plugins/zsh-fsh"]
-url = "https://github.com/zdharma-continuum/fast-syntax-highlighting"
+[".config/zshrc.d/plugins/zsh-completions"]
+url = "https://github.com/zsh-users/zsh-completions"
 refreshPeriod = "168h"
 type = "git-repo"
 
-
-[".config/zshrc.d/plugins/catppuccin-mocha.ini"]
-url = "https://raw.githubusercontent.com/catppuccin/zsh-fsh/main/themes/catppuccin-mocha.ini"
+[".config/zshrc.d/plugins/fzf-tab"]
+url = "https://github.com/Aloxaf/fzf-tab"
 refreshPeriod = "168h"
-type = "file"
+type = "git-repo"
