@@ -8,6 +8,7 @@ path = "mise/bin/mise"
 url = 'https://github.com/wez/wezterm/releases/latest/download/wezterm-{{ (gitHubLatestRelease "wez/wezterm").TagName | replace "-" "_" }}-1.fedora39.{{ if eq .chezmoi.arch "amd64" }}x86_64{{ else }}{{ .chezmoi.arch }}{{ end }}.rpm'
 refreshPeriod = "168h"
 type = "file"
+executable = true
 
 [".local/bin/uad"]
 url = 'https://github.com/0x192/universal-android-debloater/releases/download/{{ (gitHubLatestTag "0x192/universal-android-debloater").Name }}/uad_gui-{{ .chezmoi.os }}.tar.gz'
