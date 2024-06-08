@@ -10,6 +10,11 @@ refreshPeriod = "168h"
 type = "file"
 executable = true
 
+[".local/bin/posh"]
+url = '{{ gitHubLatestReleaseAssetURL "JanDeDobbeleer/oh-my-posh" (printf "posh-%s-%s" .chezmoi.os .chezmoi.arch ) }}'
+refreshPeriod = "168h"
+type = "file"
+
 [".local/bin/uad"]
 url = 'https://github.com/0x192/universal-android-debloater/releases/download/{{ (gitHubLatestTag "0x192/universal-android-debloater").Name }}/uad_gui-{{ .chezmoi.os }}.tar.gz'
 refreshPeriod = "168h"
