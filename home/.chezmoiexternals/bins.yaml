@@ -1,0 +1,32 @@
+.local/bin/mise:
+  url: https://github.com/jdx/mise/releases/latest/download/mise-{{ (gitHubLatestRelease "jdx/mise").TagName }}-{{ .chezmoi.os }}-{{ if eq .chezmoi.arch "amd64" }}x64{{ else }}{{ .chezmoi.arch }}{{ end }}.tar.gz
+  refreshPeriod: 168h
+  type: archive-file
+  path: mise/bin/mise
+
+.local/bin/wezterm:
+  url: '{{ gitHubLatestReleaseAssetURL "wez/wezterm" "*.AppImage" }}'
+  refreshPeriod: 168h
+  type: file
+  executable: true
+
+.local/bin/posh:
+  url: '{{ gitHubLatestReleaseAssetURL "JanDeDobbeleer/oh-my-posh" ( printf "posh-%s-%s" .chezmoi.os .chezmoi.arch ) }}'
+  refreshPeriod: 168h
+  type: file
+  executable: true
+
+.local/bin/pgweb:
+  url: https://github.com/sosedoff/pgweb/releases/latest/download/pgweb_{{ .chezmoi.os }}_{{ .chezmoi.arch }}.zip
+  refreshPeriod: 168h
+  type: archive-file
+  path: pgweb_{{ .chezmoi.os }}_{{ .chezmoi.arch }}
+
+.local/bin/uad:
+  url:
+    '{{ gitHubLatestReleaseAssetURL "Universal-Debloater-Alliance/universal-android-debloater-next-generation"
+    (printf "uad-ng-noselfupdate-%s.zip" .chezmoi.os ) }}'
+  refreshPeriod: 168h
+  type: archive-file
+  path: uad-ng-noselfupdate-{{ .chezmoi.os }}
+  executable: true

@@ -1,0 +1,62 @@
+#! /bin/bash
+
+# ffx-gnome hash: {{ include (printf "%s/.local/share/gnome-shell/extensions/gsconnect@andyholmes.github.io/schemas/org.gnome.Shell.Extensions.GSConnect.gschema.xml" (env "HOME")) | sha256sum }}
+
+# https://github.com/GSConnect/gnome-shell-extension-gsconnect/issues/1382#issuecomment-1824819169
+
+# Define variables for paths
+TARGET_DIR="$HOME/.local/share/glib-2.0/schemas"
+EXTENSIONS_DIR="$HOME/.local/share/gnome-shell/extensions"
+
+# Create the target directory if it does not exist
+if [ ! -d "$TARGET_DIR" ]; then
+	mkdir -p "$TARGET_DIR"
+	echo "Created directory $TARGET_DIR."
+fi
+
+# Copy schema files only if they are not already present
+SCHEMA_FILES=$(find "$EXTENSIONS_DIR" -name "*GSConnect.gschema.xml")
+for file in $SCHEMA_FILES; do
+	target_file="$TARGET_DIR/$(basename $file)"
+	if [ ! -f "$target_file" ]; then
+		cp "$file" "$TARGET_DIR"
+		echo "Copied $file to $TARGET_DIR."
+	fi
+done
+
+# Change to the target directory
+cd "$TARGET_DIR"
+
+# Compile schemas if there are new or modified schema files
+if [ ! -f compiled.gschema.xml ] || [ $(find . -name "*.xml" -newer compiled.gschema.xml | wc -l) -gt 0 ]; then
+	glib-compile-schemas .
+	echo "Schemas compiled."
+else
+	echo "No new or modified schema files to compile."
+fi
+
+# Set gsettings value only if it is not already set
+CURRENT_SETTING=$(gsettings get org.gnome.Shell.Extensions.GSConnect create-native-messaging-hosts)
+if [ "$CURRENT_SETTING" != "false" ]; then
+	gsettings set org.gnome.Shell.Extensions.GSConnect create-native-messaging-hosts false
+	echo "Set gsettings for create-native-messaging-hosts to false."
+else
+	echo "gsettings for create-native-messaging-hosts is already set to false."
+fi
+
+# Remove specified directories if they exist
+for dir in "$HOME/.config/chromium" \
+	"$HOME/.config/google-chrome" \
+	"$HOME/.config/google-chrome-beta" \
+	"$HOME/.config/google-chrome-unstable" \
+	"$HOME/.config/BraveSoftware" \
+	"$HOME/.config/microsoft-edge-dev" \
+	"$HOME/.config/microsoft-edge-beta" \
+	"$HOME/.mozilla/native-messaging-hosts"; do
+	if [ -d "$dir" ]; then
+		rm -rf "$dir"
+		echo "Removed directory $dir."
+	else
+		echo "Directory $dir does not exist."
+	fi
+done
