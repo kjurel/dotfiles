@@ -103,7 +103,9 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 		end
 	end
 
-	local edge_background = "#0b0022"
+	local theme_colors = wezterm.color.get_builtin_schemes()["Catppuccin Mocha"]
+
+	local edge_background = theme_colors.ansi[1]
 	local background = "#1b1032"
 	local foreground = "#808080"
 
@@ -128,7 +130,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 		{ Text = get_current_working_dir(tab) },
 	})
 
-	local title = string.format(" %s ~ %s  ", get_process(tab), cwd)
+	local title = string.format(" %s %s ~ %s  ", tab.tab_index, get_process(tab), cwd)
 
 	if has_unseen_output then
 		return {
