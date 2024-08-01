@@ -104,7 +104,7 @@ config.launch_menu = {
 	{ args = { "top" } },
 	{ args = { "nvim", "." } },
 }
-require("statusbar.right")
+-- require("statusbar.right")
 require("tabline")
 
 -- and finally, return the configuration to wezterm

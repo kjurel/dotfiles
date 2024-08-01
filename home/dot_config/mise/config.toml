@@ -1,3 +1,7 @@
+[env]
+NODE_REPL_HISTORY = ""
+TS_NODE_HISTORY = ""
+
 [tools]
 fzf = "latest"
 tmux = "latest"
@@ -10,6 +14,7 @@ poetry = "latest"
 node = "lts"
 pnpm = "latest"
 zoxide = "latest"
+zig = "latest"
 
 [settings]
 experimental = true

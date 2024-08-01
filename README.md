@@ -24,3 +24,7 @@ installed software using `chezmoi` in `.local/bin`
 ```sh
 fc-cache -fv
 ```
+
+## Courtesy of (configs)
+
+- waybar : [ahmad9059](https://github.com/ahmad9059/dotfiles/tree/main/.config/waybar)
