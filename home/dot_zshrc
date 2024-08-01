@@ -1,0 +1,38 @@
+#! usr/bin/zsh
+
+# Source global definitions
+if [ -f /etc/zshrc ]; then
+    . /etc/zshrc
+fi
+
+# User specific environment
+if [[ ! "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# Check if shell is interactive
+[[ ! $- =~ i ]] && return
+
+# Source ble.sh if interactive
+# [[ $- =~ i ]] && source $HOME/.local/share/blesh/ble.sh --noattach || echo "Error: Unable to source ble.sh"
+
+# Source custom configurations
+if [ -d $HOME/.config/zshrc.d ]; then
+    for file in $HOME/.config/zshrc.d/*.zsh; do
+        source $file
+    done
+fi
+
+# Source plugins
+if [ -d $HOME/.config/zshrc.d/plugins ]; then
+    for file in $HOME/.config/zshrc.d/plugins/*.sh; do
+        source $file
+    done
+fi
+
+# TODO: Move to .config/zshrc.d
+
+eval "$(mise activate zsh)"
+eval "$(mise x starship -- starship init zsh)"
+
